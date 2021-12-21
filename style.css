@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --red: hsl(0, 100%, 74%); 
+    --green: hsl(154, 59%, 51%);
+
+    --blue: hsl(248, 32%, 49%);
+    --dark-blue: hsl(249, 10%, 26%); 
+    --grayish-blue: hsl(246, 25%, 77%);
+}
+
+html {
+background-color: var(--red);
+background-image: url(/images/bg-intro-desktop.png);
+background-size: cover;
+background-position: center center;
+font-size: 16px;
+font-family: 'Poppins', sans-serif
+}
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/* ===================== Containers =====================*/
+
+body {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    display: flex;
+    padding: 8rem;
+}
+
+.presentation {
+    flex: 1 1 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+}
+
+.sign_up {
+    flex: 1 1 50%;
+}
+
+/* =====================Title Section =====================*/
+
+.presentation header h2 {
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+
+.presentation header p {
+    color: white;
+}
+
+/* =====================Form Section =====================*/
+
+    /* ------------  Trial Button ------------  */
+
+#try_btn  {
+    color: white;
+    background-color: var(--blue);
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    outline: none;
+    border: none;
+    border-radius: .5rem;
+    box-shadow: 0px 8px 2px 0px rgba(0,0,0,.15);
+    font-weight: 400;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+#try_btn:hover {
+    transform: scale(.9);
+}
+
+#try_btn span {
+    font-weight: 700;
+}
+
+    /* ------------  Form Inputs ------------  */
+
+.sign_up_inputs {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0px 8px 2px 0px rgba(0,0,0,.15);
+    width: 100%;
+}
+
+.form_control {
+    margin: 1.5rem auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.form_control input {
+    padding: 1.2rem;
+    width: 100%;
+    border: .5px solid rgba(0,0,0,.1);
+
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--dark-blue);
+    outline: none;
+}
+
+.form_control input:focus {
+    border: 1px solid var(--blue);
+    color: var(--dark-blue);
+}
+
+.form_control img {
+    display: none;
+    position: absolute;
+    right: 5%;
+    top: 30%;
+    transform: translateY(-30%);
+}
+
+.form_control p {
+    display: none;
+    align-self: flex-end;
+    color: var(--red);
+    font-size: .8rem;
+}
+
+        /* error style */
+.form_control.error input {
+    border: 2px solid var(--red);  
+    color: var(--red); 
+}
+
+.form_control.error img, .form_control.error p {
+    display: block;
+}
+
+    /* ------------  Form Submit Button ------------  */
+
+.form_button {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.form_button button {
+    color: white;
+    background-color: var(--green);
+    width: 100%;
+    margin-bottom: .5rem;
+    padding: 1rem;
+    outline: none;
+    border: none;
+    border-radius: .5rem;
+    box-shadow: inset 0px -5px 1px 0px rgba(0,0,0,.1);
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.form_button button:hover {
+    background-color: hsl(154, 59%, 71%);
+    transform: scale(.9);
+}
+
+.form_button p {
+    font-size: .8rem;
+    color: var(--grayish-blue);
+    text-align: center;
+}
+
+.form_button p a {
+    color: var(--red);
+    font-weight: 600;
+}
+
+/* ===================== Media Queries =====================*/
+
+@media all and (max-width:1000px) {
+
+    .wrapper {
+        flex-direction: column;
+        padding: 1rem;
+        margin: 2rem 0;
+    }
+
+    .presentation {
+        padding: 0;
+        margin: 3rem auto;
+        text-align: center;
+    }
+
+    .presentation header h2 {
+        font-size: 3rem;
+    }
+}
